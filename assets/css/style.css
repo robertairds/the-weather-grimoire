@@ -1,0 +1,173 @@
+/* Variáveis Dark Academia / Gótico */
+:root {
+    --bg-dark: #0f0c0a;        /* Preto profundo / carvão */
+    --text-color: #d4c3b3;     /* Bege pergaminho desbotado */
+    --accent-gold: #9c825a;    /* Dourado envelhecido / latão */
+    --accent-crimson: #611c1c; /* Vermelho carmesim */
+    --glass-effect: rgba(26, 21, 18, 0.75); /* Fundo semi-transparente */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(circle, #221a16 0%, var(--bg-dark) 100%);
+    font-family: 'Almendra', serif;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    letter-spacing: 0.5px;
+    overflow: hidden; /* Evita barras de rolagem causadas pela animação da chuva */
+}
+
+/* Camada da Chuva em CSS */
+.rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeat rgba(0, 0, 0, 0.05);
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(156, 130, 90, 0.15) 80%, rgba(255,255,255,0) 100%),
+                      linear-gradient(to right, transparent 99%, rgba(156, 130, 90, 0.1) 100%);
+    background-size: 100% 100%, 25px 100%;
+    z-index: -1;
+    animation: rainAnimation 0.6s linear infinite;
+}
+
+@keyframes rainAnimation {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 20px 100%; }
+}
+
+/* Card Gótico (Vidro Fosco / Glassmorphism) */
+.gothic-card {
+    background: var(--glass-effect);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid var(--accent-gold);
+    outline: 1px solid var(--bg-dark);
+    outline-offset: -6px;
+    padding: 40px 30px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(156, 130, 90, 0.1);
+    text-align: center;
+    border-radius: 4px;
+}
+
+header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.6rem;
+    color: var(--accent-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #8a7b6e;
+    border-bottom: 1px double var(--accent-gold);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+/* Caixa de Busca */
+.search-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--accent-gold);
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: inherit;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    border-radius: 2px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-crimson);
+    background-color: rgba(97, 28, 28, 0.1);
+}
+
+button {
+    background-color: var(--accent-crimson);
+    color: var(--text-color);
+    border: 1px solid var(--accent-gold);
+    padding: 12px 24px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #822727;
+}
+
+/* Resultados do Oráculo */
+.weather-result {
+    margin-top: 25px;
+    padding: 25px;
+    border: 1px solid rgba(156, 130, 90, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
+    animation: ritualFadeIn 0.6s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+#res-city-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+
+.temp-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--accent-gold);
+    margin: 15px 0;
+}
+
+/* Estilo para os novos detalhes expandidos */
+.almanac-details {
+    text-align: left;
+    margin-top: 15px;
+    border-top: 1px dashed rgba(156, 130, 90, 0.3);
+    padding-top: 15px;
+}
+
+.almanac-details p {
+    font-style: italic;
+    color: #a8998a;
+    margin-bottom: 8px;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: #5c5146;
+    text-transform: uppercase;
+}
+
+@keyframes ritualFadeIn {
+    from { opacity: 0; transform: scale(0.95); filter: blur(5px); }
+    to { opacity: 1; transform: scale(1); filter: blur(0); }
+}

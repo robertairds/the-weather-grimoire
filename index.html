@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Weather Grimoire</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="rain"></div>
+
+    <div class="gothic-card">
+        <header>
+            <h1>The Weather Grimoire</h1>
+            <p class="subtitle">Crônicas Meteorológicas Ocultas</p>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Invoque uma sombria localidade...">
+                <button id="search-btn">Consultar</button>
+            </div>
+
+            <div id="weather-result" class="weather-result hidden">
+                <h2 id="res-city-name">Cidade</h2>
+                <div class="temp-display">
+                    <span id="res-temperature">--</span>°C
+                </div>
+                
+                <div class="almanac-details">
+                    <p id="res-wind">Vento gélido: -- km/h</p>
+                    <p id="res-humidity">Humidade do Ar: --%</p>
+                    <p id="res-uv">Radiação Astral (UV): --</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Conectado ao Oráculo do Open-Meteo API</p>
+        </footer>
+    </div>
+
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
