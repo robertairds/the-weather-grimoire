@@ -51,7 +51,6 @@ Durante o desenvolvimento do The Weather Grimoire, foi possível consolidar conc
 
 - **Tratamento de respostas assíncronas em cadeia:** Lógica para buscar primeiro as coordenadas de uma localização específica para, em seguida, disparar a consulta dos dados climáticos.
 - **Refatoração e Consumo de APIs Modernas:** Transição de parâmetros legados do Open-Meteo para o formato unificado `current`, eliminando conflitos de dados em requisições assíncronas e blindando o código contra propriedades nulas (`undefined`).
-- **Performance em animações de ambiente:** Criação de efeitos climáticos contínuos de chuva com gradientes e `@keyframes` que não sacrificam o desempenho do navegador ou a renderização do layout.
 - **Arquitetura modular moderna:** Uso prático de `import` e `export` nativos (ES Modules) para isolar completamente as responsabilidades entre a lógica de comunicação com o servidor e o controle do DOM.
 - **Experiência do Usuário (UX) Temática:** Adaptação de dados brutos de APIs meteorológicas para uma interface lúdica e imersiva sem perder o rigor técnico do projeto.
 
